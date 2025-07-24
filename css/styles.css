@@ -1,0 +1,335 @@
+/*
+ * Green & White Theme for Banana Leaf Export Website
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #FFFFFF; /* Main white background */
+    --secondary-color: #F8F9FA; /* Slightly off-white for sections */
+    --accent-color: #2E7D32; /* Main green accent */
+    --text-color: #212529; /* Dark text for readability */
+    --light-text-color: #FFFFFF;
+    --font-heading: "Lora", serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+/* --- Animation Keyframes --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 0.75rem 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.navbar-brand-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-main { color: var(--text-color); }
+.brand-accent { color: var(--accent-color); }
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+    border-color: #ddd;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(46, 125, 50, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    padding: 8rem 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1620973394951-501d1593285e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    color: var(--text-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+/* --- General Section & Animation --- */
+.section { 
+    padding: 5rem 0; 
+    background-color: var(--primary-color);
+}
+.section.bg-light {
+     background-color: var(--secondary-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- About Section --- */
+#about img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+#about img:hover {
+    transform: scale(1.03);
+}
+
+/* --- Services/Products Section --- */
+#products .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    height: 100%;
+}
+
+#products .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.15);
+}
+
+#products .card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#products .card:hover i { transform: scale(1.1); }
+#products .card-title { font-size: 1.5rem; font-weight: 600; color: var(--text-color); }
+#products .card-text { color: #6c757d; }
+
+/* --- Gallery Section --- */
+#gallery .work-item {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+    aspect-ratio: 4 / 3;
+    display: flex;
+}
+
+#gallery .work-item:hover { transform: translateY(-8px) scale(1.02); }
+#gallery .work-item img { 
+    transition: transform 0.4s ease; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#gallery .work-item:hover img { transform: scale(1.15); }
+
+#gallery .work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(46, 125, 50, 0.8), transparent);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#gallery .work-item:hover .work-overlay { opacity: 1; }
+
+#gallery .work-overlay h5 {
+    color: var(--light-text-color);
+    font-weight: 600;
+}
+
+/* --- Contact Form Section --- */
+#contact {
+    background-color: var(--secondary-color);
+}
+.contact-form {
+    background: var(--primary-color);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+.form-control {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+}
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.25);
+}
+.btn-submit {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.btn-submit:hover {
+    background-color: #1B5E20; /* Darker green */
+    color: var(--light-text-color);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #212529; /* Dark footer for contrast */
+    color: var(--secondary-color);
+    padding: 4rem 0 0 0;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.footer-text {
+    color: #adb5bd;
+    font-size: 0.9rem;
+}
+
+.footer-links li, .footer-contact li { margin-bottom: 0.75rem; }
+
+.footer-links a, .footer-contact a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.footer-social a {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.footer .border-top { border-color: #343a40 !important; }
+.footer .copyright { color: #adb5bd; }
+
+/* --- Project Modal Styles --- */
+.modal-content {
+    background-color: var(--primary-color);
+    border: 1px solid #ddd;
+    color: var(--text-color);
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header .modal-title {
+    color: var(--accent-color);
+}
+
+.btn-close {
+    background-color: #fff;
+}
+
+.project-details {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+.project-details h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.project-details ul { list-style: none; padding-left: 0; }
+.project-details ul li { margin-bottom: 1rem; }
+.project-details ul li strong { color: var(--text-color); }
