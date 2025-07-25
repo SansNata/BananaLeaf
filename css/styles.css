@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Hero Section --- */
 #hero {
     padding: 8rem 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/Foto\ Pisang\ 1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1603204593961-99b43f015a6b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
     color: var(--light-text-color);
     text-align: center;
     overflow: hidden;
@@ -220,50 +220,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #6c757d;
 }
 
-/* --- Gallery Section --- */
-#gallery .work-item {
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease;
-    aspect-ratio: 4 / 3;
-    display: flex;
-}
-
-#gallery .work-item:hover { transform: translateY(-8px) scale(1.02); }
-#gallery .work-item img { 
-    transition: transform 0.4s ease; 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-#gallery .work-item:hover img { transform: scale(1.15); }
-
-#gallery .work-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(46, 125, 50, 0.8), transparent);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-#gallery .work-item:hover .work-overlay { opacity: 1; }
-
-#gallery .work-overlay h5 {
-    color: var(--light-text-color);
-    font-weight: 600;
-}
-
 /* --- FAQ Section --- */
 .accordion-item {
     margin-bottom: 1rem;
@@ -376,40 +332,83 @@ h1, h2, h3, h4, h5, h6 {
 .footer .border-top { border-color: #2e7d32 !important; }
 .footer .copyright { color: #a5d6a7; }
 
-/* --- Project Modal Styles --- */
-.modal-content {
-    background-color: var(--primary-color);
-    border: 1px solid #ddd;
-    color: var(--text-color);
-    border-radius: 15px;
+/* --- Responsive Styles --- */
+
+/* Tablets and smaller devices */
+@media (max-width: 991.98px) {
+    /* --- Hero Section --- */
+    #hero {
+        min-height: 60vh;
+        padding: 6rem 0;
+    }
+
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+
+    #hero p {
+        font-size: 1.15rem;
+    }
+
+    /* --- General Section --- */
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* --- About Section --- */
+    #about .text-center-md {
+        text-align: center;
+    }
+
+    #about img {
+        height: auto; /* Let the image scale naturally */
+        max-height: 500px; /* Set a max-height */
+        margin-bottom: 2rem;
+    }
+
+    /* --- Process Section --- */
+    .process-step {
+        margin-bottom: 3rem;
+    }
 }
 
-.modal-header {
-    border-bottom: 1px solid #ddd;
-}
+/* Mobile devices */
+@media (max-width: 767.98px) {
+    /* --- Hero Section --- */
+    #hero {
+        min-height: 50vh;
+        padding: 5rem 0;
+    }
 
-.modal-header .modal-title {
-    color: var(--accent-color);
-}
+    #hero h1 {
+        font-size: 2.2rem;
+    }
 
-.btn-close {
-    background-color: #fff;
-}
+    #hero p {
+        font-size: 1rem;
+    }
+    
+    /* --- General Section --- */
+    .section {
+        padding: 4rem 0;
+    }
 
-.project-details {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid #eee;
-}
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
 
-.project-details h3 {
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
-}
+    /* --- Products Section --- */
+    #products .card {
+        padding: 2rem 1.5rem;
+    }
 
-.project-details ul { list-style: none; padding-left: 0; }
-.project-details ul li { margin-bottom: 1rem; }
-.project-details ul li strong { color: var(--text-color); }
+    /* --- Footer --- */
+    .footer {
+        text-align: center;
+    }
+
+    .footer-contact a {
+        justify-content: center;
+    }
+}
